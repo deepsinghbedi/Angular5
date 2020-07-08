@@ -1,0 +1,15 @@
+<div>
+  <h1>{{companyDetails}}</h1>
+  <p>Please fill the following details to login</p>
+  <form action="submit">
+    <input type="text" name="userName" placeholder="input your name" [(ngModel)]="userName">{{userName}}<br>
+    <input type="password" name="passWord" placeholder="input your password" [(ngModel)]="passWord">{{passWord}}
+    <input type="submit" [name]=btnName id="loginID" (click)="login()">
+  </form>
+<div [@credentials]="credentials.length">
+    <p>List Enteries</p>
+    <ul>
+      <li *ngFor="let credential of credentials; let i= index" (click)="removeCreds(i)">{{credential}}</li><br>
+    </ul>
+  </div>
+</div>
